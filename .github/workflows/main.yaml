@@ -1,0 +1,18 @@
+name: main
+
+on:
+  workflow_dispatch:
+    inputs:
+      ACTIONS_CHECKOUT_REF:
+        description: "What ref should be passed to actions/checkout?"
+        required: false
+        default: "main"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.1
+      with:
+        ref: ${{ ACTIONS_CHECKOUT_REF }}
+    - run: cat README.md
