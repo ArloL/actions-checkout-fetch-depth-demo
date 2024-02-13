@@ -14,5 +14,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4.1.1
       with:
-        ref: ${{ ACTIONS_CHECKOUT_REF }}
+        ref: ${{ inputs.ACTIONS_CHECKOUT_REF }}
     - run: cat README.md
